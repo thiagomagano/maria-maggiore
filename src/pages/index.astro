@@ -29,9 +29,13 @@ import Contato from '../components/sections/Contato.astro';
 	section {
 		min-height: 101svh;
 	}
+
+	section > div {
+		@apply grid place-items-center place-content-center h-screen;
+	}
 	
 	main > section:nth-child(even) {
-  	@apply bg-maggiore-brown text-maggiore-green; /* Cor 1 para seções ímpares */
+  	@apply bg-white text-maggiore-green; /* Cor 1 para seções ímpares */
 	}
 
 main > section:nth-child(odd) {
@@ -42,6 +46,8 @@ main > section > div > h1 {
       display: block;
       transform: translateX(-100px);
       opacity: 0;
+			font-size: 70px;
+			
     }
 </style>
 
