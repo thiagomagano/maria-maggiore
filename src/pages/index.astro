@@ -2,14 +2,64 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import logo from "../assets/logo-maggiore.png"
+import Hero from '../components/sections/Hero.astro';
+import Sobre from '../components/sections/Sobre.astro';
+import Diferenciais from '../components/sections/Diferenciais.astro';
+import Localizacao from '../components/sections/Localizacao.astro';
+import Galeria from '../components/sections/Galeria.astro';
+import Plantas from '../components/sections/Plantas.astro';
+import Contato from '../components/sections/Contato.astro';
 ---
 
 <Layout title="Maria Maggiore - Home">
-	<main class="grid place-items-center h-[100svh]">
-		<section class="flex flex-col gap-24 justify-center items-center">
-			<Image src={logo} width={200} height={200} alt="Logo Maria Maggiore" class="transition-transform hover:scale-110"/>
-			<h1 class="font-bold text-4xl font-serif"></h1>
-		</section>
+	<main class="">
+		<Hero />
+		<Sobre />
+		<Diferenciais />
+		<Localizacao />
+		<Galeria />
+		<Plantas />
+		<Contato />
+
 	</main>
 </Layout>
+
+
+<style is:global>
+	section {
+		min-height: 101svh;
+	}
+	
+	main > section:nth-child(even) {
+  	@apply bg-maggiore-brown text-maggiore-green; /* Cor 1 para seções ímpares */
+	}
+
+main > section:nth-child(odd) {
+  @apply bg-maggiore-green text-maggiore-brown; /* Cor 2 para seções pares */
+}
+
+main > section > div > h1 {
+      display: block;
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+</style>
+
+<script>
+	import { inView, animate } from "motion";
+
+inView("section", ({ target }) => {
+  animate(
+    target.querySelectorAll("div>h1"),
+    { opacity: 1, transform: "none" },
+    { delay: 0.3, duration: 1, easing: [0.17, 0.55, 0.55, 1] }
+  )
+
+	return () => animate(
+    target.querySelectorAll("div>h1"),
+    { opacity: 0, transform: "translateX(-100px)" },
+    { delay: 0.2, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
+  )
+});
+</script>
 
