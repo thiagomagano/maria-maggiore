@@ -1,0 +1,46 @@
+---
+const { src, alt } = Astro.props;
+let isOpen = false;
+
+function openModal() {
+  isOpen = true;
+}
+
+function closeModal() {
+  isOpen = false;
+}
+---
+
+
+
+<div>
+  <img 
+    src={src} 
+    alt={alt} 
+    class="cursor-pointer rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-200" 
+    onClick={openModal}
+    id="Image" 
+  />
+
+  {isOpen && (
+    <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+      <div class="relative">
+        <img src={src} alt={alt} class="max-w-full max-h-full rounded-lg shadow-lg" />
+        <button 
+          onClick={closeModal} 
+          class="absolute top-2 right-2 text-white text-xl font-bold"
+          id="BtnClose"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+  )}
+</div>
+<!-- 
+<script>
+  const image = document.querySelector("#Image")
+  const BtnClose = document.querySelector("#BtnClose")
+
+  image?.addEventListener('click', () => isOpen = true);
+</script> -->
