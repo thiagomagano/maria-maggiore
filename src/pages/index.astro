@@ -42,7 +42,7 @@ main > section:nth-child(odd) {
   @apply bg-maggiore-green text-maggiore-brown; /* Cor 2 para seções pares */
 }
 
-main > section > div > h1 {
+main > section > div  {
       display: block;
       transform: translateX(-100px);
       opacity: 0;
@@ -56,13 +56,13 @@ main > section > div > h1 {
 
 inView("section", ({ target }) => {
   animate(
-    target.querySelectorAll("div>h1"),
+    target.querySelectorAll("div"),
     { opacity: 1, transform: "none" },
     { delay: 0.3, duration: 1, easing: [0.17, 0.55, 0.55, 1] }
   )
 
 	return () => animate(
-    target.querySelectorAll("div>h1"),
+    target.querySelectorAll("div"),
     { opacity: 0, transform: "translateX(-100px)" },
     { delay: 0.2, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
   )
