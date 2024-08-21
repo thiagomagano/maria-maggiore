@@ -1,29 +1,60 @@
 ---
-import logo from '@assets/gazzola-logo-white.webp'
+import logo from '@assets/logo-maria-maggiore.svg'
+
+const sections = ["Inicio", "Sobre",  "Galeria", "Localização","Diferências", "Plantas", "Contato"];
+
+
+
 ---
 
-
-<header class="bg-maggiore-green text-white sticky top-0 py-8 w-full z-50 grid place-items-center">
+<nav class="bg-maggiore-green text-white sticky top-0 py-8 w-full z-50 grid place-items-center">
   <div class="container flex justify-between items-center gap-x-1 md:gap-x-0">
-
     <a href="#hero"class="block">
-      <img src={logo.src} alt="Logo Maria Maggiore" class="w-48 object-contain">
+      <img src={logo.src} alt="Logo Maria Maggiore" class="w-[270px] object-contain">
     </a>
-    <nav class="flex gap-4">
-      <a href="#hero">incio</a>
-      <a href="#sobre">sobre</a>
-      <a href="#galeria">galeria</a>
-      <a href="#localizacao">localização</a>
-      <a href="#diferencias">diferencias</a>
-      <a href="#plantas">plantas</a>
-      <a href="#contato">contato</a>
-    </nav>
-  </div>
-</header>
+    <ul class="flex  space-x-8 p-4">
+      {sections.map((section) => (
+        <li>
+        <a href={`#${section.toLowerCase()}`} 
+           class="relative text-white hover:text-maggiore-brown transition duration-300"
+           aria-current="page">
+          {section}
+          <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-maggiore-brown scale-x-0 origin-center transition-transform duration-300"></span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+</nav>
 
 
-<style>
-  a {
-    @apply  capitalize font-normal transform transition-transform  hover:underline hover:text-gray-200
-  }
-</style>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    const options = {
+      threshold: 0.6, // 60% da seção deve estar visível
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute("id");
+        const navLink = document.querySelector(`nav a[href="#${id}"]`);
+
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove("active"));
+          navLink?.classList.add("active");
+          navLink?.querySelector("span").classList.add("scale-x-100");
+        } else {
+          navLink?.classList.remove("active");
+          navLink?.querySelector("span").classList.remove("scale-x-100");
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  });
+</script>

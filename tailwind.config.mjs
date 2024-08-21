@@ -9,6 +9,9 @@ export default {
         "gazzola-gold": "#DBB662",
         "gazzola-blue": "#112F5B",
       },
+      fontFamily: {
+        sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+      },
     },
   },
   plugins: [],
