@@ -11,9 +11,9 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-import photos from "@data/fotos";
+import photos from "@data/plantas";
 
-export default function Gallery() {
+export default function GalleryPlantas() {
   const [index, setIndex] = useState(-1);
 
   return (
@@ -21,7 +21,6 @@ export default function Gallery() {
       <ColumnsPhotoAlbum
         photos={photos}
         onClick={({ index }) => setIndex(index)}
-        columns={4}
       />
 
       <Lightbox
