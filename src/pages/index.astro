@@ -14,7 +14,7 @@ import Contato from '../components/sections/Contato.astro';
 <Layout title="Maria Maggiore - Home">
 	<main class="">
 		<Hero />
-		<Sobre />
+		<!-- <Sobre /> -->
 		<Galeria />
 		<Localizacao />
 		<Diferenciais />
@@ -26,46 +26,16 @@ import Contato from '../components/sections/Contato.astro';
 
 
 <style is:global>
-	section {
-		min-height: 101svh;
-	}
-
-	section > div {
-		@apply grid place-items-center place-content-center min-h-screen;
-	}
-	
-	main > section:nth-child(even) {
+	main > section:nth-child(odd) {
   	@apply bg-white text-maggiore-green; /* Cor 1 para seções ímpares */
 	}
 
-main > section:nth-child(odd) {
-  @apply bg-maggiore-green text-maggiore-brown; /* Cor 2 para seções pares */
-}
-
-main > section > div  {
-      display: block;
-      transform: translateX(-100px);
-      opacity: 0;
-			font-size: 70px;
-			
-    }
+	main > section:nth-child(even) {
+  	@apply bg-maggiore-green text-maggiore-brown; /* Cor 2 para seções pares */
+	}
 </style>
 
 <script>
-	import { inView, animate } from "motion";
-
-inView("section", ({ target }) => {
-  animate(
-    target.querySelectorAll("div"),
-    { opacity: 1, transform: "none" },
-    { delay: 0.3, duration: 1, easing: [0.17, 0.55, 0.55, 1] }
-  )
-
-	return () => animate(
-    target.querySelectorAll("div"),
-    { opacity: 0, transform: "translateX(-100px)" },
-    { delay: 0.2, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
-  )
-});
+	
 </script>
 

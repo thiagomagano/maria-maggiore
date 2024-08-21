@@ -1,15 +1,15 @@
 ---
 import logo from '@assets/logo-maria-maggiore.svg'
 
-const sections = ["Inicio", "Sobre",  "Galeria", "Localização","Diferências", "Plantas", "Contato"];
+const sections = ["Inicio", "Galeria", "Localização","Diferencias", "Plantas", "Contato"];
 
 
 
 ---
 
-<nav class="bg-maggiore-green text-white sticky top-0 py-8 w-full z-50 grid place-items-center">
+<nav class="bg-maggiore-green text-white sticky top-0 py-5 w-full z-50 grid place-items-center">
   <div class="container flex justify-between items-center gap-x-1 md:gap-x-0">
-    <a href="#hero"class="block">
+    <a href="/"class="block">
       <img src={logo.src} alt="Logo Maria Maggiore" class="w-[270px] object-contain">
     </a>
     <ul class="flex  space-x-8 p-4">
@@ -45,10 +45,10 @@ const sections = ["Inicio", "Sobre",  "Galeria", "Localização","Diferências",
         if (entry.isIntersecting) {
           navLinks.forEach(link => link.classList.remove("active"));
           navLink?.classList.add("active");
-          navLink?.querySelector("span").classList.add("scale-x-100");
+          navLink?.querySelector("span")?.classList.add("scale-x-100");
         } else {
           navLink?.classList.remove("active");
-          navLink?.querySelector("span").classList.remove("scale-x-100");
+          navLink?.querySelector("span")?.classList.remove("scale-x-100");
         }
       });
     }, options);
