@@ -1,5 +1,84 @@
-<section id="localização" class="py-12">
-  <div class="container mx-auto">
-    <h1 class="font-bold">Localização</h1>
+---
+import { Image } from "astro:assets";
+import ImgLocalizacao from "@assets/localizacao_maggiore.png";
+
+const pontosEstrategicos = [
+  {
+    id: 1,
+    desc: "Viva Open Mall",
+    tempo: "5",
+  },
+  {
+    id: 2,
+    desc: "Parque Germânia",
+    tempo: "10",
+  },
+  {
+    id: 3,
+    desc: "Iguatemi",
+    tempo: "15",
+  },
+  {
+    id: 4,
+    desc: "Bourbon Country",
+    tempo: "20",
+  },
+  {
+    id: 5,
+    desc: "Hospital Conceição",
+    tempo: "12",
+  },
+  {
+    id: 6,
+    desc: "Bourbon Wallig",
+    tempo: "5",
+  },
+  {
+    id: 7,
+    desc: "Boulevard Assis Brasil",
+    tempo: "8",
+  },
+];
+---
+
+<section id="localização" class="">
+  <div class="grid lg:grid-cols-2">
+    <div class="bg-gray-300">
+      <div class="container mx-auto py-24 px-24 grid place-items-center">
+        <Image
+          src={ImgLocalizacao}
+          alt="Mapa mostrando a localização do empreendimento"
+        />
+      </div>
+    </div>
+    <div class="bg-maggiore-green py-24 px-24">
+      <div
+        class="container mx-auto text-white flex flex-col justify-items-center gap-24"
+      >
+        <h2 class="text-6xl font-bold">
+          Praticidade no dia a dia. <br /> Comodidade garantida.
+        </h2>
+
+        <ol class="grid grid-cols-2 gap-y-12 gap-x-4">
+          {
+            pontosEstrategicos.map((pontos) => (
+              <li class="flex gap-8 items-center text-2xl">
+                <span class="text-5xl font-medium  rounded-full border-maggiore-dourado-400 border-2 size-[90px] flex items-center justify-center">
+                  {pontos.id}
+                </span>
+                <span class="flex flex-col">
+                  {pontos.desc}
+
+                  <span class="text-base text-gray-400">
+                    {pontos.tempo} Minutos
+                  </span>
+                </span>
+              </li>
+            ))
+          }
+          <li></li>
+        </ol>
+      </div>
+    </div>
   </div>
 </section>

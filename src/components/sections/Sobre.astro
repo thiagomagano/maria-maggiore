@@ -18,6 +18,9 @@ const listaCaracteristicas = [
 const unidadesDisponiveis = 21;
 const dataEntrega = "01/01/2025";
 const andamentoObra = 40;
+const andamentoObra2 = 75;
+const andamentoObra3 = 45;
+const andamentoObra4 = 5;
 ---
 
 <section id="sobre" class="py-24 space-y-24 overflow-hidden">
@@ -44,17 +47,55 @@ const andamentoObra = 40;
       >
         <h4>Andamento geral da obra</h4>
 
-        <div class="progress-bar flex justify-between items-center">
-          <div
-            class="progress-bar-fill relative"
-            style=`width: ${andamentoObra}%;`
-          >
-          </div>
-          <p
-            class="inline pr-8 text-4xl absolute text-center -right-16 top-1/2"
-          >
+        <div
+          class="progress-bar flex justify-between items-center"
+          style=`--progress: ${andamentoObra}%`
+        >
+          <span class="">
             {andamentoObra}%
-          </p>
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-4 px-16 items-center place-self-stretch relative"
+      >
+        <h4>Estrutura</h4>
+
+        <div
+          class="progress-bar flex justify-between items-center"
+          style=`--progress: ${andamentoObra2}%`
+        >
+          <span class="">
+            {andamentoObra2}%
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-4 px-16 items-center place-self-stretch relative"
+      >
+        <h4>Alvenaria</h4>
+
+        <div
+          class="progress-bar flex justify-between items-center"
+          style=`--progress: ${andamentoObra3}%`
+        >
+          <span class="">
+            {andamentoObra3}%
+          </span>
+        </div>
+      </div>
+      <div
+        class="flex flex-col gap-4 px-16 items-center place-self-stretch relative"
+      >
+        <h4>Revestimentos</h4>
+
+        <div
+          class="progress-bar flex justify-between items-center"
+          style=`--progress: ${andamentoObra4}%`
+        >
+          <span class="">
+            {andamentoObra4}%
+          </span>
         </div>
       </div>
     </div>
@@ -66,7 +107,7 @@ const andamentoObra = 40;
     @apply text-white text-xl;
   }
   div > span {
-    @apply text-4xl font-extrabold py-2 border border-maggiore-dourado-400 self-stretch text-center block w-full;
+    @apply text-xl font-bold py-2 border border-maggiore-dourado-400 self-stretch text-center block w-full;
   }
 
   .custom-counter {
@@ -90,8 +131,12 @@ const andamentoObra = 40;
   .progress-bar {
     width: 100%; /* Ou defina uma largura fixa */
     height: 100%; /* Ajuste a altura conforme necessário */
-    min-height: 50px;
-    background-color: transparent; /* Cor de fundo da barra vazia */
+    min-height: 1.125rem;
+    background: linear-gradient(
+      to right,
+      #aea181 var(--progress),
+      transparent var(--progress)
+    ); /* Cor de fundo da barra vazia */
     border-radius: 5px; /* Opcional: cantos arredondados */
     overflow: hidden;
     border: solid 1px #aea181; /* Garante que o preenchimento não vaze */
