@@ -1,5 +1,106 @@
-<section id="sobre" class="py-12">
-  <div class="container mx-auto">
-      <h1 class="font-bold">Sobre</h1>
+---
+import { Image } from "astro:assets";
+import fachadaSobre from "@assets/fachada_sobre.png";
+
+const listaCaracteristicas = [
+  "Torre única",
+  "Apartamentos de 2 e 3 dormitórios (opções de gardens e coberturas)",
+  "Vagas de garagem 100% cobertas",
+  "Churrasqueira a carvão em todas as unidades",
+  "Espera para split na sala e dormitórios",
+  "Bicicletário com bike sharing",
+  "Salão de festas com terraço, mobiliado e equipado",
+  "Rooftop com churrasqueira, solarium e fire place",
+  "Excelente posição solar",
+  "Baixo custo condominial",
+];
+
+const unidadesDisponiveis = 21;
+const dataEntrega = "01/01/2025";
+const andamentoObra = 40;
+---
+
+<section id="sobre" class="py-24 space-y-24 overflow-hidden">
+  <div class="grid lg: grid-cols-1 xl:grid-cols-2 gap-24">
+    <Image src={fachadaSobre} alt="Fachada Maria Maggiore" />
+    <ol class="text-white text-xl custom-counter list-none space-y-9 ml-2">
+      {listaCaracteristicas.map((caracteristica) => <li>{caracteristica}</li>)}
+    </ol>
+  </div>
+  <div class="container mx-auto text-white space-y-12">
+    <div
+      class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 place-items-center"
+    >
+      <div class="flex flex-col gap-4 px-16 items-center place-self-stretch">
+        <h4>Disponíveis</h4>
+        <span> {unidadesDisponiveis} Unidades</span>
+      </div>
+      <div class="flex flex-col gap-4 px-16 items-center place-self-stretch">
+        <h4>Entrega</h4>
+        <span>{dataEntrega}</span>
+      </div>
+      <div
+        class="flex flex-col gap-4 px-16 items-center place-self-stretch relative"
+      >
+        <h4>Andamento geral da obra</h4>
+
+        <div class="progress-bar flex justify-between items-center">
+          <div
+            class="progress-bar-fill relative"
+            style=`width: ${andamentoObra}%;`
+          >
+          </div>
+          <p
+            class="inline pr-8 text-4xl absolute text-center -right-16 top-1/2"
+          >
+            {andamentoObra}%
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  h4 {
+    @apply text-white text-xl;
+  }
+  div > span {
+    @apply text-4xl font-extrabold py-2 border border-maggiore-dourado-400 self-stretch text-center block w-full;
+  }
+
+  .custom-counter {
+    counter-reset: list-counter;
+  }
+
+  .custom-counter li {
+    position: relative;
+    padding-left: 2em; /* Ajuste conforme necessário */
+  }
+
+  .custom-counter li::before {
+    content: counter(list-counter, decimal-leading-zero);
+    counter-increment: list-counter;
+    position: absolute;
+    left: 0;
+    color: #aea181; /* Substitua pelo valor da cor que você quiser */
+    font-weight: bold;
+  }
+
+  .progress-bar {
+    width: 100%; /* Ou defina uma largura fixa */
+    height: 100%; /* Ajuste a altura conforme necessário */
+    min-height: 50px;
+    background-color: transparent; /* Cor de fundo da barra vazia */
+    border-radius: 5px; /* Opcional: cantos arredondados */
+    overflow: hidden;
+    border: solid 1px #aea181; /* Garante que o preenchimento não vaze */
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background-color: #aea181; /* Cor de fundo da barra preenchida */
+    transition: width 0.5s ease; /* Opcional: animação suave */
+    @apply h-full bg-maggiore-dourado-500;
+  }
+</style>

@@ -1,32 +1,47 @@
 ---
-import logo from '@assets/logo-maria-maggiore.svg'
+import logo from "@assets/logo-maria-maggiore.svg";
 
-const sections = ["Inicio", "Galeria", "Localização","Diferencias", "Plantas", "Contato"];
-
-
-
+const sections = [
+  "Inicio",
+  "Sobre",
+  "Galeria",
+  "Localização",
+  "Diferencias",
+  "Plantas",
+  "Contato",
+];
 ---
 
-<nav class="bg-maggiore-green text-white sticky top-0 py-5 w-full z-50 grid place-items-center">
+<nav
+  id="navbar"
+  class="bg-maggiore-green text-white sticky top-0 py-5 w-full z-50 grid place-items-center overflow-hidden"
+>
   <div class="container flex justify-between items-center gap-x-1 md:gap-x-0">
-    <a href="/"class="block">
-      <img src={logo.src} alt="Logo Maria Maggiore" class="w-[270px] object-contain">
+    <a href="/" class="block">
+      <img
+        src={logo.src}
+        alt="Logo Maria Maggiore"
+        class="w-[270px] object-contain"
+      />
     </a>
-    <ul class="flex  space-x-8 p-4">
-      {sections.map((section) => (
-        <li>
-        <a href={`#${section.toLowerCase()}`} 
-           class="relative text-white hover:text-maggiore-brown transition duration-300"
-           aria-current="page">
-          {section}
-          <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-maggiore-brown scale-x-0 origin-center transition-transform duration-300"></span>
-        </a>
-      </li>
-    ))}
-  </ul>
-</div>
+    <ul class="flex space-x-8 p-4">
+      {
+        sections.map((section) => (
+          <li>
+            <a
+              href={`#${section.toLowerCase()}`}
+              class="relative text-white hover:text-maggiore-brown transition duration-300"
+              aria-current="page"
+            >
+              {section}
+              <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-maggiore-brown scale-x-0 origin-center transition-transform duration-300" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </nav>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -38,12 +53,12 @@ const sections = ["Inicio", "Galeria", "Localização","Diferencias", "Plantas",
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         const id = entry.target.getAttribute("id");
         const navLink = document.querySelector(`nav a[href="#${id}"]`);
 
         if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.remove("active"));
+          navLinks.forEach((link) => link.classList.remove("active"));
           navLink?.classList.add("active");
           navLink?.querySelector("span")?.classList.add("scale-x-100");
         } else {
@@ -53,7 +68,7 @@ const sections = ["Inicio", "Galeria", "Localização","Diferencias", "Plantas",
       });
     }, options);
 
-    sections.forEach(section => {
+    sections.forEach((section) => {
       observer.observe(section);
     });
   });

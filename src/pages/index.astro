@@ -1,41 +1,35 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
-import Layout from '../layouts/Layout.astro';
-
-import Hero from '../components/sections/Hero.astro';
-import Sobre from '../components/sections/Sobre.astro';
-import Diferenciais from '../components/sections/Diferenciais.astro';
-import Localizacao from '../components/sections/Localizacao.astro';
-import Galeria from '../components/sections/Galeria.astro';
-import Plantas from '../components/sections/Plantas.astro';
-import Contato from '../components/sections/Contato.astro';
+import Hero from "../components/sections/Hero.astro";
+import Sobre from "../components/sections/Sobre.astro";
+import Diferenciais from "../components/sections/Diferenciais.astro";
+import Localizacao from "../components/sections/Localizacao.astro";
+import Galeria from "../components/sections/Galeria.astro";
+import Plantas from "../components/sections/Plantas.astro";
+import Contato from "../components/sections/Contato.astro";
 ---
 
 <Layout title="Maria Maggiore - Home">
-	<main class="">
-		<Hero />
-		<!-- <Sobre /> -->
-		<Galeria />
-		<Localizacao />
-		<Diferenciais />
-		<Plantas />
-		<Contato />
-
-	</main>
+  <main class="">
+    <Hero />
+    <Sobre />
+    <Galeria />
+    <Localizacao />
+    <Diferenciais />
+    <Plantas />
+    <Contato />
+  </main>
 </Layout>
 
-
 <style is:global>
-	main > section:nth-child(odd) {
-  	@apply bg-white text-maggiore-green; /* Cor 1 para seções ímpares */
-	}
+  main > section:nth-child(odd) {
+    @apply bg-white text-maggiore-green; /* Cor 1 para seções ímpares */
+  }
 
-	main > section:nth-child(even) {
-  	@apply bg-maggiore-green text-maggiore-brown; /* Cor 2 para seções pares */
-	}
+  main > section:nth-child(even) {
+    @apply bg-maggiore-green text-maggiore-brown; /* Cor 2 para seções pares */
+  }
 </style>
 
-<script>
-	
-</script>
-
+<script></script>
