@@ -1,0 +1,35 @@
+---
+const { descricao, progresso } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 px-16 items-center place-self-stretch relative">
+  <h4 class="text-xl text-white">{descricao}</h4>
+
+  <div
+    class="progress-bar flex justify-between items-center"
+    style=`--progress: ${progresso}%`
+  >
+    <span class="">
+      {progresso}%
+    </span>
+  </div>
+</div>
+
+<style>
+  .progress-bar {
+    width: 100%; /* Ou defina uma largura fixa */
+    height: 100%; /* Ajuste a altura conforme necessário */
+    min-height: 1.125rem;
+    background: linear-gradient(
+      to right,
+      #aea181 var(--progress),
+      transparent var(--progress)
+    ); /* Cor de fundo da barra vazia */
+    border-radius: 5px; /* Opcional: cantos arredondados */
+    overflow: hidden;
+    border: solid 1px #aea181; /* Garante que o preenchimento não vaze */
+  }
+  span {
+    @apply text-xl font-bold py-2 border border-maggiore-dourado-400 self-stretch text-center block w-full;
+  }
+</style>
