@@ -1,14 +1,22 @@
+---
+const TELEFONE = "5551992219166";
+const WPP_MSG =
+  "Olá, estava olhando a landing page do maria maggiore e gostaria de saber mais sobre o empreendimento!";
+---
+
 <section id="contato" class="py-24">
   <div
     class="container mx-auto grid grid-cols-1 gap-y-12 md:grid-cols-2 lg:grid-cols-3 md:gap-8 xl:gap-0 xl:grid-cols-4 px-8 text-maggiore-green">
     <div class="">
-      <h2 class="text-xl font-bold min-h-[50px] flex items-center">
+      <h2 class="text-2xl font-bold min-h-[50px] flex items-center">
         Sua unidade te espera.
       </h2>
       <div class="space-y-4">
         <p>Plantão de vendas ↓</p>
-        <button
-          class="px-6 bg-maggiore-green text-white flex gap-4 items-center text-lg min-h-14">
+        <a
+          href=`https://api.whatsapp.com/send?phone=${TELEFONE}&text=${WPP_MSG}`
+          class="bg-maggiore-green text-white px-14 inline-flex gap-2 items-center justify-baseline text-lg min-h-12 max-w-auto"
+          target="_blank">
           <svg
             width="16"
             height="16"
@@ -21,8 +29,8 @@
               d="M17.9371 3.19707C15.9894 1.15309 13.3362 0 10.5716 0H10.5399C4.7774 4.30096e-05 0.0875069 4.89002 0.0875069 10.901L0.0875481 10.9017C0.0878932 12.8143 0.570837 14.6932 1.48791 16.3497L0 22L5.54388 20.4831C7.07616 21.3536 8.7931 21.8105 10.5382 21.8121H10.5383H10.5405C16.3161 21.8121 21 16.9293 21 10.9083C21 8.01703 19.8967 5.24282 17.9366 3.19944L17.9371 3.19707ZM10.5435 19.9759C8.98594 19.9759 7.45496 19.5364 6.1169 18.708L5.79839 18.5101L2.50849 19.4085L3.38343 16.0656L3.17781 15.7226C2.30534 14.2772 1.84045 12.6008 1.84045 10.8923C1.84045 5.88719 5.73399 1.82829 10.5351 1.82829C12.8459 1.82829 15.0634 2.78771 16.6938 4.49403C18.3248 6.19503 19.241 8.50154 19.2412 10.9065C19.2412 15.9146 15.3464 19.9759 10.5424 19.9759H10.5435ZM15.3122 13.1841C15.0497 13.0464 13.7661 12.3896 13.5281 12.2984C13.2901 12.2072 13.1151 12.1607 12.9375 12.4362C12.7599 12.7116 12.262 13.3219 12.1097 13.5052C11.9575 13.6885 11.8044 13.7123 11.5454 13.5745C11.2864 13.4368 10.4403 13.1494 9.44542 12.2209C8.87236 11.6701 8.38011 11.0344 7.98446 10.3342C7.83131 10.0605 7.96779 9.91371 8.1008 9.78055C8.23382 9.64739 8.36332 9.4631 8.49192 9.30349C8.60063 9.16603 8.68903 9.01241 8.75419 8.84771C8.78894 8.77264 8.80522 8.68973 8.80156 8.60646C8.7979 8.5232 8.77442 8.44219 8.73324 8.37074C8.66236 8.23397 8.13731 6.89306 7.92731 6.34671C7.71731 5.80036 7.49948 5.89068 7.33849 5.87786C7.1775 5.86509 7.0121 5.86969 6.83973 5.86969C6.70685 5.87293 6.57606 5.90484 6.4556 5.9634C6.33514 6.02197 6.22763 6.10591 6.13984 6.20994C5.90438 6.48081 5.22805 7.14208 5.22805 8.48295C5.22805 9.82382 6.1634 11.1172 6.29464 11.3015C6.42592 11.4857 8.13731 14.2359 10.7623 15.4153C11.3853 15.6944 11.8718 15.8622 12.2498 15.9917C12.5872 16.0977 12.9377 16.1516 13.2901 16.1516C13.4925 16.1516 13.6953 16.1338 13.8945 16.0984C14.3968 16.0218 15.4397 15.4408 15.6594 14.805C15.879 14.1692 15.8781 13.6192 15.8125 13.5107C15.7468 13.4022 15.5771 13.3228 15.3137 13.1832L15.3122 13.1841Z"
               fill="white"></path>
           </svg>
-          <span>Clique e fale conosco</span>
-        </button>
+          <span>Fale Conosco</span>
+        </a>
       </div>
     </div>
     <div class="hidden xl:block"></div>
@@ -75,3 +83,12 @@
     </div>
   </div>
 </section>
+
+<style>
+  a {
+    @apply transition-all  hover:-translate-y-0.5 active:text-maggiore-verde-400 active:-translate-y-0.5 focus:text-maggiore-verde-400 focus:-translate-y-0.5;
+  }
+  a.inline-flex {
+    @apply hover:text-maggiore-verde-100 hover:bg-maggiore-verde-700;
+  }
+</style>
