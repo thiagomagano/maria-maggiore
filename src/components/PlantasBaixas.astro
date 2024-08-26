@@ -9,8 +9,8 @@ import plantas from "@data/plantas";
       {
         plantas.map((planta) => (
           <div class="swiper-slide">
-            <div class="grid grid-cols-4">
-              <div class="space-y-8 place-self-end self-center">
+            <div class="grid grid-cols-1 lg:grid-cols-4">
+              <div class="space-y-8  place-self-center">
                 <h3 class="text-maggiore-green font-medium text-3xl max-w-xs border-t-2 pt-6 border-maggiore-green">
                   Apartamentos <br /> Tipo 3 dormitórios
                 </h3>
@@ -20,29 +20,31 @@ import plantas from "@data/plantas";
               <Image
                 src={planta}
                 alt={"planta maria maggiore"}
-                class="w-full h-auto object-contain max-h-[500px] col-span-3"
+                class="w-full h-auto object-contain max-h-[500px] lg:col-span-3"
               />
             </div>
           </div>
         ))
       }
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next invisible sm:visible"></div>
+    <div class="swiper-button-prev invisible sm:visible"></div>
   </div>
-  <div class="swiper thumbs-swiper">
-    <div class="swiper-wrapper">
-      {
-        plantas.map((planta) => (
-          <div class="swiper-slide">
-            <Image
-              src={planta}
-              alt={"Miniatura Planta"}
-              class="max-w-[200px] h-auto cursor-pointer object-fit object-center flex justify-center items-center"
-            />
-          </div>
-        ))
-      }
+  <div class="hidden lg:block">
+    <div class="swiper thumbs-swiper hidden lg:block">
+      <div class="swiper-wrapper hidden lg:block">
+        {
+          plantas.map((planta) => (
+            <div class="swiper-slide">
+              <Image
+                src={planta}
+                alt={"Miniatura Planta"}
+                class="max-w-[200px] h-auto cursor-pointer object-fit object-center flex justify-center items-center"
+              />
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </div>
@@ -75,3 +77,10 @@ import plantas from "@data/plantas";
     });
   });
 </script>
+
+<style>
+  .swiper {
+    /* --swiper-navigation-color: #aea181; */
+    --swiper-navigation-color: #2b443b;
+  }
+</style>
