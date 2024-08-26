@@ -29,13 +29,15 @@ const andamentoGeral = 40;
       class={"h-full object-contain"}
     />
     <ol
-      class="text-white text-base md:text-lg custom-counter list-none flex flex-col space-y-4 px-8 md:justify-between">
+      class="text-white text-base md:text-lg custom-counter list-none flex flex-col space-y-4 px-8 md:justify-between"
+    >
       {listaCaracteristicas.map((caracteristica) => <li>{caracteristica}</li>)}
     </ol>
   </div>
   <div class="container mx-auto text-white space-y-12">
     <div
-      class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 place-items-center">
+      class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 place-items-center"
+    >
       <div class="flex flex-col gap-4 px-16 items-center place-self-stretch">
         <h4>Disponíveis</h4>
         <span> {unidadesDisponiveis} Unidades</span>

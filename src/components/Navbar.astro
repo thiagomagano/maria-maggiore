@@ -13,9 +13,11 @@ const sections = [
 
 <nav
   id="navbar"
-  class="bg-maggiore-green text-white sticky top-0 py-5 w-full z-50 flex justify-between items-center overflow-hidden">
+  class="bg-maggiore-green text-white sticky top-0 py-5 w-full z-50 flex justify-between items-center overflow-hidden"
+>
   <div
-    class="container mx-auto px-8 grid lg:grid-cols-2 place-items-center lg:place-items-start place-content-between gap-y-6 gap-x-1 md:gap-x-0">
+    class="container mx-auto px-8 grid lg:grid-cols-2 place-items-center lg:place-items-start place-content-between gap-y-6 gap-x-1 md:gap-x-0"
+  >
     <a href="/" class="block self-center">
       <img
         src={logo.src}
@@ -30,7 +32,8 @@ const sections = [
             <a
               href={`#${section.toLowerCase()}`}
               class="relative text-white hover:text-maggiore-brown transition duration-300"
-              aria-current="page">
+              aria-current="page"
+            >
               {section}
               <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-maggiore-brown scale-x-0 origin-center transition-transform duration-300" />
             </a>

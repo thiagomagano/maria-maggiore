@@ -1,14 +1,17 @@
 ---
-import GalleryPlantas from "@components/jsx/GalleryPlantas";
+import GalleryPlantas from "@components/PlantasBaixas.astro";
 ---
 
 <section class="py-12" id="plantas">
-  <div class="mx-auto container flex flex-col gap-20 place-self-start">
-    <h1
-      class="font-medium uppercase justify-self-start text-2xl place-self-start"
-    >
-      Confira as plantas dos apartamentos
-    </h1>
-    <!-- <GalleryPlantas client:load /> -->
+  <div class="mx-auto container flex flex-col gap-20 place-self-start px-8">
+    <div class="grid md:grid-cols-2">
+      <h1 class="text-4xl font-bold max-w-3xl">
+        Apaixone-se.<br />Sinta-se em casa.
+      </h1>
+      <p class="self-end text-xl">
+        Apartamentos de 2 e 3 dormitórios <br /> com opções de gardens e cobertura.
+      </p>
+    </div>
+    <GalleryPlantas />
   </div>
 </section>

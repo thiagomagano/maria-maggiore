@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets";
+import plantas from "@data/plantas";
+---
+
+<div>
+  <div class="swiper main-swiper">
+    <div class="swiper-wrapper">
+      {
+        plantas.map((planta) => (
+          <div class="swiper-slide">
+            <div class="grid grid-cols-4">
+              <div class="space-y-8 place-self-end self-center">
+                <h3 class="text-maggiore-green font-medium text-3xl max-w-xs border-t-2 pt-6 border-maggiore-green">
+                  Apartamentos <br /> Tipo 3 dormitórios
+                </h3>
+                <p class="text-xs">(Finais 01 e 03)</p>
+                <p class="font-bold">95,28m² privativos</p>
+              </div>
+              <Image
+                src={planta}
+                alt={"planta maria maggiore"}
+                class="w-full h-auto object-contain max-h-[500px] col-span-3"
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+  <div class="swiper thumbs-swiper">
+    <div class="swiper-wrapper">
+      {
+        plantas.map((planta) => (
+          <div class="swiper-slide">
+            <Image
+              src={planta}
+              alt={"Miniatura Planta"}
+              class="max-w-[200px] h-auto cursor-pointer object-fit object-center flex justify-center items-center"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Thumbs } from "swiper/modules";
+  import "swiper/css";
+  import "swiper/css/navigation";
+  import "swiper/css/thumbs";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    let thumbsSwiper = new Swiper(".thumbs-swiper", {
+      modules: [Thumbs],
+      spaceBetween: 0,
+      slidesPerView: 7,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    let mainSwiper = new Swiper(".main-swiper", {
+      modules: [Navigation, Thumbs],
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbsSwiper,
+      },
+    });
+  });
+</script>
