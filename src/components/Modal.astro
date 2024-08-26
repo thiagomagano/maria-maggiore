@@ -89,16 +89,18 @@
 </style>
 
 <script>
+  //@ts-ignore
   const modal = document.getElementById("modal");
   const openModalBtn = document.getElementById("openModal");
   const closeModalBtn = document.getElementById("closeModal");
-  const form = document.getElementById("modalForm");
 
-  openModalBtn.addEventListener("click", () => {
+  openModalBtn?.addEventListener("click", () => {
+    //@ts-ignore
     modal?.showModal();
   });
 
-  closeModalBtn.addEventListener("click", () => {
+  closeModalBtn?.addEventListener("click", () => {
+    //@ts-ignore
     modal?.close();
   });
 </script>
