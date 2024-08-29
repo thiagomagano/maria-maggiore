@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+
+const { label, icon, variant, url } = Astro.props;
+---
+
+<a
+  id="btn"
+  class="py-4 px-4 flex gap-2 items-center justify-center text-lg w-full shrink-0 max-w-72 transition-all duration-300 ease-linear hover:-translate-y-2 active:-translate-y-1 focus:hover:-translate-y-1"
+  class:list={variant}
+  href={url}
+  target="_blank">
+  <Image src={icon} alt=`Ícone do botão ${label}` width={16} height={16} />
+
+  <span>{label}</span>
+</a>

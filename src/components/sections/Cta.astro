@@ -1,0 +1,43 @@
+---
+// CTA.astro
+
+import BotaoCTA from "@components/BotaoCTA.astro";
+
+import bgImage from "@assets/fotos/area_comum/hall_3.webp";
+import zap from "@assets/svg/zap.svg";
+
+const TELEFONE = "5551992219166";
+const WPP_MSG =
+  "Olá, estava olhando a landing page do Maria Maggiore e gostaria de saber mais sobre o empreendimento.";
+
+const API_ZAP = `https://api.whatsapp.com/send?phone=${TELEFONE}&text=${WPP_MSG}`;
+
+const title = "Sua unidade te espera.";
+const buttonText = "Fale Conosco";
+const buttonLink = "/contato";
+const backgroundImage = bgImage.src;
+---
+
+<section class="relative py-36">
+  <!-- Imagem de fundo com filtro claro -->
+  <div
+    class="absolute inset-0 bg-cover bg-center"
+    style={`background-image: url(${backgroundImage});`}>
+  </div>
+  <div class="absolute inset-0 bg-white opacity-70"></div>
+
+  <!-- Conteúdo do CTA -->
+  <div class="relative z-10 container mx-auto px-4 text-center">
+    <h2 class="text-4xl md:text-5xl font-bold mb-8 text-maggiore-green">
+      {title}
+    </h2>
+    <div class="flex justify-center">
+      <BotaoCTA
+        label="Fale Conosco"
+        icon={zap}
+        variant={["bg-maggiore-green", "text-white"]}
+        url={API_ZAP}
+      />
+    </div>
+  </div>
+</section>

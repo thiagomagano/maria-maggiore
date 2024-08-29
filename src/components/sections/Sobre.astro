@@ -17,40 +17,35 @@ const listaCaracteristicas = [
 ];
 
 const unidadesDisponiveis = 21;
-const dataEntrega = "01/01/2025";
+const dataEntrega = "Dezembro de 2025";
 const andamentoGeral = 40;
 ---
 
 <section id="sobre" class="py-24 space-y-24 overflow-hidden">
-  <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 xl:grid-cols-2">
     <Image
       src={fachadaSobre}
       alt="Fachada Maria Maggiore"
       class={"h-full object-contain"}
     />
     <ol
-      class="text-white text-base md:text-lg custom-counter list-none flex flex-col space-y-4 px-8 md:justify-between"
-    >
+      class="text-white text-base md:text-lg custom-counter list-none flex flex-col space-y-4 px-8 md:justify-between lg:px-0 lg:-ml-[4em]">
       {listaCaracteristicas.map((caracteristica) => <li>{caracteristica}</li>)}
     </ol>
   </div>
   <div class="container mx-auto text-white space-y-12">
     <div
-      class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 place-items-center"
-    >
+      class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 place-items-center">
       <div class="flex flex-col gap-4 px-16 items-center place-self-stretch">
-        <h4>Disponíveis</h4>
-        <span> {unidadesDisponiveis} Unidades</span>
+        <h4>Unidades</h4>
+        <span> {unidadesDisponiveis}</span>
       </div>
       <div class="flex flex-col gap-4 px-16 items-center place-self-stretch">
         <h4>Entrega</h4>
         <span>{dataEntrega}</span>
       </div>
 
-      <ProgressoObra
-        descricao="Andamento geral da obra"
-        progresso={andamentoGeral}
-      />
+      <ProgressoObra descricao="Andamento da obra" progresso={andamentoGeral} />
     </div>
   </div>
 </section>

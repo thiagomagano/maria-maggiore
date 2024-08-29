@@ -1,9 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import ImgDiferenciais from "@assets/diferenciais.png";
+import Vantagens from "./Vantagens.astro";
 ---
 
-<section id="diferencias" class="py-24">
+<section id="diferencias" class="py-24 bg-white text-maggiore-green">
   <div class="container mx-auto space-y-24 px-8">
     <div class="grid md:grid-cols-2">
       <h1 class="text-4xl font-bold max-w-3xl">
@@ -12,12 +13,7 @@ import ImgDiferenciais from "@assets/diferenciais.png";
       <p class="self-end text-xl">Conheça as vantagens do empreendimento.</p>
     </div>
     <div class="grid place-items-center">
-      <Image
-        src={ImgDiferenciais}
-        width={855}
-        height={552}
-        alt="Figuras mostrando os diferencias do empreendimento"
-      />
+      <Vantagens />
     </div>
   </div>
 </section>

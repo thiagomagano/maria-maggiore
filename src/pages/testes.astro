@@ -1,0 +1,69 @@
+---
+// Vantagens.astro
+
+const vantagens = [
+  { icon: "🚗⚡", title: "Espera para tomada de carro elétrico" },
+  { icon: "🚨", title: "Alarme CFTV" },
+  { icon: "💡", title: "Iluminação do condomínio em LED" },
+  { icon: "🧱", title: "Paredes em alvenaria" },
+  { icon: "🚲", title: "Bike sharing" },
+  { icon: "🏠", title: "Forro de gesso em todo o apartamento" },
+  // Adicione mais vantagens conforme necessário para completar o grid 3x3
+];
+---
+
+<section class="py-16 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">
+      Vantagens do Nosso Empreendimento
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        vantagens.map((vantagem) => (
+          <div class="vantagem-item p-6 rounded-lg flex flex-col items-center text-center transition-all duration-300">
+            <div class="text-4xl mb-4">{vantagem.icon}</div>
+            <h3 class="text-xl font-semibold">{vantagem.title}</h3>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .vantagem-item {
+    position: relative;
+    background-color: white;
+    z-index: 1;
+  }
+
+  .vantagem-item::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ffd700, #008000);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: inherit;
+  }
+
+  .vantagem-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .vantagem-item:hover::before {
+    opacity: 1;
+  }
+</style>

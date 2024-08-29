@@ -5,8 +5,20 @@ import heroImage2 from "@assets/fotos/area_comum/salao_de_festas_2.webp";
 import heroImage3 from "@assets/fotos/interior/interior_801_803_cob_5.webp";
 import heroImage4 from "@assets/fotos/interior/interior_801_803_cob_4.webp";
 import Modal from "../Modal.astro";
+import BotaoCTA from "../BotaoCTA.astro";
+
+import zap from "@assets/svg/zap.svg";
+import pdf from "@assets/svg/icon-pdf.svg";
 
 const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
+
+const TELEFONE = "5551992219166";
+const WPP_MSG =
+  "Olá, estava olhando a landing page do Maria Maggiore e gostaria de saber mais sobre o empreendimento.";
+
+const API_ZAP = `https://api.whatsapp.com/send?phone=${TELEFONE}&text=${WPP_MSG}`;
+const URL_MATERIAL =
+  "https://drive.capazestudio.com.br/index.php/s/z8PyiYDf2sxiHR7";
 ---
 
 <section id="inicio" class="h-auto">
@@ -20,7 +32,7 @@ const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
           <div class="swiper-slide">
             <img
               src={heroImage.src}
-              class="h-[70svh] object-cover w-full overflow-hidden"
+              class="h-[75svh] object-cover w-full overflow-hidden"
             />
           </div>
         ))
@@ -35,10 +47,7 @@ const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
       <h2 class="text-xl text-maggiore-green max-w-lg">
         Aconchegante. Moderno. <br /> Perto da natureza. Próximo de tudo.
       </h2>
-      <p class="self-end text-sm">
-        Rua Nicolau Faillace, 396 - Porto Alegre / RS
-      </p>
-
+      <p class="self-end">Rua Nicolau Faillace, 396 - Porto Alegre / RS</p>
       <svg
         viewBox="0 0 541 91"
         fill="none"
@@ -83,16 +92,18 @@ const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
       </svg>
 
       <div class="flex flex-col md:flex-row gap-4 self-end text-nowrap">
-        <p
-          class="py-4 px-10 border-1 border border-maggiore-dourado-300 text-lg">
-          21 unidades exclusivas
-        </p>
-        <button
-          id="openModal"
-          class="py-4 px-10 bg-maggiore-green text-white text-lg">
-          Solicite uma simulação
-        </button>
-        <Modal />
+        <BotaoCTA
+          label="Baixar Material Completo"
+          icon={pdf}
+          variant={["bg-transparent", "border", "border-maggiore-verde-800"]}
+          url={URL_MATERIAL}
+        />
+        <BotaoCTA
+          label="Fale Conosco"
+          icon={zap}
+          variant={["bg-maggiore-green", "text-white"]}
+          url={API_ZAP}
+        />
       </div>
     </div>
   </div>
@@ -100,8 +111,13 @@ const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
 
 <style>
   .swiper-pagination {
-    --swiper-pagination-bullet-size: 12px;
+    --swiper-pagination-bullet-size: 1rem;
     --swiper-pagination-color: #aea181;
+    --swiper-pagination-bullet-inactive-color: #f1f1f1;
+    --swiper-pagination-bullet-inactive-opacity: 0.4;
+  }
+  .swiper-pagination-bullet {
+    border: 2px solid white;
   }
   .swiper-slide {
     @apply h-[55svh] w-full object-cover overflow-hidden;
@@ -110,11 +126,11 @@ const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
 
 <script>
   import Swiper from "swiper";
-  import { Pagination } from "swiper/modules";
+  import { Autoplay, Pagination } from "swiper/modules";
   import "swiper/css/bundle";
 
   const swiper = new Swiper(".swiper", {
-    modules: [Pagination],
+    modules: [Pagination, Autoplay],
 
     // If we need pagination
     pagination: {
@@ -122,6 +138,7 @@ const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
       clickable: true,
     },
     autoplay: true,
+
     loop: true,
   });
 </script>

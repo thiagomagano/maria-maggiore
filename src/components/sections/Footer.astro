@@ -1,0 +1,58 @@
+---
+// Footer.astro
+
+// Importe ou defina os caminhos para seus ícones/logos
+
+import logoGazzola from "@assets/svg/gazzola.svg";
+import instagram from "@assets/svg/instagram.svg";
+import tiktok from "@assets/svg/tiktok.svg";
+
+const logoSrc = logoGazzola.src;
+const instagramIcon = instagram.src;
+const tiktokIcon = tiktok.src;
+---
+
+<footer class="bg-gray-100 py-16 text-maggiore-green">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-3">
+      <!-- Coluna 1: Logo da empresa -->
+      <div class="w-full md:w-1/3 mb-6 md:mb-0">
+        <img src={logoSrc} alt="Logo da Empresa" class="min-w-64" />
+        <h4 class="font-bold text-xl text-nowrap">Incorporação e Construção</h4>
+      </div>
+
+      <!-- Coluna 2: Telefones -->
+      <div
+        class="w-full md:w-1/3 mb-6 md:mb-0 text-lg space-y-4 justify-self-center text-nowrap place-self-center">
+        <p>WhatsApp: <span class="underline">(51) 99221-9166 </span></p>
+        <p>Telefone: <span class="underline">(51) 3779-3521</span></p>
+      </div>
+      <!-- Coluna 3: Redes Sociais -->
+      <div
+        class="md:w-1/3 shrink-0 justify-self-end place-self-center space-y-6">
+        <div class="flex space-x-6 items-center">
+          <a
+            href="https://www.instagram.com/gazzolainc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:opacity-75">
+            <img src={instagramIcon} alt="Instagram" class="h-7" />
+          </a>
+          <a
+            href="https://www.tiktok.com/@gazzolainc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:opacity-75">
+            <img src={tiktokIcon} alt="TikTok" class="h-7" />
+          </a>
+        </div>
+
+        <a
+          href="https://gazzolainc.com.br"
+          target="_blank"
+          class="inline-block hover:underline">gazzolainc.com.br</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
