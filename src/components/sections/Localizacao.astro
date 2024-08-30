@@ -52,30 +52,22 @@ const pontosEstrategicos = [
         <Image
           src={ImgLocalizacao}
           alt="Mapa mostrando a localização do empreendimento"
-          class="max-w-full"
+          class="max-w-full object-contain pb-16"
         />
       </div>
     </div>
-    <div class="bg-maggiore-green py-16 lg:px-24 space-y-8 grid">
-      <h4 class="text-2xl text-white justify-self-start place-self-end">
-        Praticidade a 5 minutos de casa.
-      </h4>
-      <div
-        class="container mx-auto text-white flex flex-col justify-center gap-16">
-        <ol class="grid grid-cols-2 gap-y-12 gap-x-4">
+    <div class="bg-maggiore-green lg:px-24">
+      <div class="text-white py-28 space-y-16">
+        <h4 class="text-2xl text-white">Praticidade a 5 minutos de casa.</h4>
+
+        <ol class="grid grid-cols-2 gap-x-4 h-[600px] pt-16">
           {
             pontosEstrategicos.map((pontos) => (
               <li class="flex gap-4 items-center text-xl">
                 <span class="text-4xl font-medium  rounded-full border-maggiore-dourado-400 border-2 min-w-[75px] min-h-[75px] grid place-items-center ">
                   {pontos.id}
                 </span>
-                <span class="flex flex-col">
-                  {pontos.desc}
-
-                  {/* <span class="text-base text-gray-400">
-                    {pontos.tempo} Minutos
-                  </span> */}
-                </span>
+                <span class="flex flex-col">{pontos.desc}</span>
               </li>
             ))
           }
