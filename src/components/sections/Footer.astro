@@ -12,9 +12,9 @@ const instagramIcon = instagram.src;
 const tiktokIcon = tiktok.src;
 ---
 
-<footer class="bg-gray-100 py-16 text-maggiore-green">
+<footer class="bg-gray-100 py-24 text-maggiore-green">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-3">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0">
       <!-- Coluna 1: Logo da empresa -->
       <div class="w-full md:w-1/3 mb-6 md:mb-0">
         <img src={logoSrc} alt="Logo da Empresa" class="min-w-64" />
@@ -29,7 +29,7 @@ const tiktokIcon = tiktok.src;
       </div>
       <!-- Coluna 3: Redes Sociais -->
       <div
-        class="md:w-1/3 shrink-0 justify-self-end place-self-center space-y-6">
+        class="md:w-1/3 shrink-0 md:justify-self-end md:place-self-center space-y-6">
         <div class="flex space-x-6 items-center">
           <a
             href="https://www.instagram.com/gazzolainc"
@@ -50,7 +50,7 @@ const tiktokIcon = tiktok.src;
         <a
           href="https://gazzolainc.com.br"
           target="_blank"
-          class="inline-block hover:underline">gazzolainc.com.br</a
+          class="inline-block hover:underline text-lg">gazzolainc.com.br</a
         >
       </div>
     </div>
