@@ -1,27 +1,43 @@
 ---
 import { Image } from "astro:assets";
 import plantas from "@data/plantas";
+import ape1 from "@assets/fotos/interior/interior_801_803_cob_1.webp";
+import ape2 from "@assets/fotos/interior/interior_801_803_cob_2.webp";
 ---
 
-<div>
-  <div class="swiper main-swiper">
+<div class="px-36">
+  <div id="plantas-swiper" class="swiper main-swiper">
     <div class="swiper-wrapper">
       {
         plantas.map((planta) => (
           <div class="swiper-slide">
-            <div class="grid grid-cols-1 lg:grid-cols-4">
-              <div class="space-y-8  place-self-center">
-                <h3 class="text-maggiore-green font-medium text-3xl max-w-xs border-t-2 pt-6 border-maggiore-green">
-                  Apartamentos <br /> Tipo 3 dormitórios
-                </h3>
-                <p class="text-xs">(Finais 01 e 03)</p>
-                <p class="font-bold">95,28m² privativos</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+              <div class="grid gap-8">
+                <div class="space-y-8 h-[33svh] flex justify-center flex-col items-center ml-20">
+                  <h3 class="text-maggiore-green font-medium text-3xl max-w-xs border-t-2 pt-6 border-maggiore-green self-baseline">
+                    Apartamentos <br /> Tipo 3 dormitórios
+                  </h3>
+                  <p class="text-xs self-baseline">(Finais 01 e 03)</p>
+                  <p class="font-bold self-baseline">95,28m² privativos</p>
+                </div>
+                <Image
+                  src={planta}
+                  alt={"planta maria maggiore"}
+                  class="planta-image"
+                />
               </div>
-              <Image
-                src={planta}
-                alt={"planta maria maggiore"}
-                class="w-full h-auto object-contain max-h-[500px] lg:col-span-3"
-              />
+              <div class="grid gap-8">
+                <Image
+                  src={ape1}
+                  alt={"ape 1 maria maggiore"}
+                  class="planta-image p-10"
+                />
+                <Image
+                  src={ape2}
+                  alt={"ape 2 maria maggiore"}
+                  class="planta-image p-10"
+                />
+              </div>
             </div>
           </div>
         ))
@@ -30,50 +46,22 @@ import plantas from "@data/plantas";
     <div class="swiper-button-next invisible sm:visible"></div>
     <div class="swiper-button-prev invisible sm:visible"></div>
   </div>
-  <div class="hidden lg:block">
-    <div class="swiper thumbs-swiper">
-      <div class="swiper-wrapper">
-        {
-          plantas.map((planta) => (
-            <div class="swiper-slide">
-              <Image
-                src={planta}
-                alt={"Miniatura Planta"}
-                class="max-w-[200px] h-auto cursor-pointer object-fit object-center flex justify-center items-center"
-              />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </div>
 </div>
 
 <script>
   import Swiper from "swiper";
-  import { Navigation, Thumbs } from "swiper/modules";
+  import { Navigation } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/navigation";
-  import "swiper/css/thumbs";
 
   document.addEventListener("DOMContentLoaded", () => {
-    let thumbsSwiper = new Swiper(".thumbs-swiper", {
-      modules: [Thumbs],
-      spaceBetween: 0,
-      slidesPerView: 7,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-
-    let mainSwiper = new Swiper(".main-swiper", {
-      modules: [Navigation, Thumbs],
+    let mainSwiper = new Swiper("#plantas-swiper", {
+      modules: [Navigation],
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      thumbs: {
-        swiper: thumbsSwiper,
-      },
+      loop: true,
     });
   });
 </script>
@@ -82,5 +70,9 @@ import plantas from "@data/plantas";
   .swiper {
     /* --swiper-navigation-color: #aea181; */
     --swiper-navigation-color: #2b443b;
+  }
+
+  .planta-image {
+    @apply h-[33svh] object-fill w-full overflow-hidden;
   }
 </style>

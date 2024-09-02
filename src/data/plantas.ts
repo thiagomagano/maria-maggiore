@@ -12,8 +12,6 @@ const plantas = [
   coberturas80x_1,
   coberturas80x_2,
   gardens20x,
-  implantacaoSS,
-  implantacaoT,
 ];
 
 export default plantas;
