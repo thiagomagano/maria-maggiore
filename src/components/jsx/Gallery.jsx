@@ -21,7 +21,12 @@ export default function Gallery() {
       <ColumnsPhotoAlbum
         photos={photos}
         onClick={({ index }) => setIndex(index)}
-        columns={4}
+        columns={(containerWidth) => {
+          if (containerWidth < 400) return 1;
+          if (containerWidth < 600) return 2;
+          if (containerWidth < 1000) return 3;
+          return 4;
+        }}
       />
 
       <Lightbox
