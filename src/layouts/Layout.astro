@@ -43,7 +43,14 @@ const {
 
     <!-- WhatsApp específico (usa Open Graph) -->
     <meta property="og:site_name" content="Site Maria Maggiore - Gazzola" />
-    <meta name="generator" content={Astro.generator} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
     <title>{title}</title>
   </head>
   <body class="bg-maggiore-green text-maggiore-brown">
