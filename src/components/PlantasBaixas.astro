@@ -13,16 +13,14 @@ import apartamentos from "@data/apartamentos";
           <div class="swiper-slide">
             <div class="grid grid-cols-1">
               <div class="grid grid-cols-1 gap-y-12">
-                <div class=" flex  justify-between items-center justify-self-start w-full border-t-2 pt-8 border-maggiore-green">
-                  <p class="font-bold self-baseline">{apartamento.metragem}</p>
-                  <h3 class="text-maggiore-green font-medium text-3xl max-w-xs  self-baseline text-nowrap">
+                <div class=" flex  justify-center gap-24 items-center  w-full border-t-2 pt-8 border-maggiore-green ">
+                  <p class="font-bold self-baseline ">{apartamento.metragem}</p>
+                  <h3 class="text-maggiore-green font-medium text-3xl    ">
                     {apartamento.titulo}
                   </h3>
-                  <p class="text-xs self-baseline text-nowrap">
-                    {apartamento.descricao}
-                  </p>
+                  <p class="text-xs ">{apartamento.descricao}</p>
                 </div>
-                <div class="px-14">
+                <div class="px-14 border-b-2 border-maggiore-green pb-8 min-h-[650px] flex justify-center items-center">
                   <Gallery
                     client:load
                     photos={[apartamento.plantaImg, ...apartamento.images]}
