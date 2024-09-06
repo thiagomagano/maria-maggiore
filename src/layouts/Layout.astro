@@ -1,11 +1,19 @@
 ---
 import Navbar from "../components/Navbar.astro";
 
-interface Props {
+export interface Props {
   title: string;
+  description: string;
+  image?: string;
+  url?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description,
+  image = "https://pub-83295a9093fc469e8c6b3025af36d350.r2.dev/Slide%202_redimensionada.webp",
+  url = Astro.url,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -21,6 +29,20 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Metadados básicos -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- WhatsApp específico (usa Open Graph) -->
+    <meta property="og:site_name" content="Site Maria Maggiore - Gazzola" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -31,15 +53,13 @@ const { title } = Astro.props;
 
     <!-- PRÉVIA -->
     <aside
-      class="fixed bottom-4 right-4 bg-slate-800 text-slate-100 p-3 rounded-full shadow-md flex items-center"
-    >
+      class="fixed bottom-4 right-4 bg-slate-800 text-slate-100 p-3 rounded-full shadow-md flex items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-5 w-5 mr-2"
         fill="none"
         viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
+        stroke="currentColor">
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
