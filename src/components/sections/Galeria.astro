@@ -31,7 +31,7 @@ import photos from "@data/fotos";
   .react-photo-album--link,
   .react-photo-album--button,
   .react-photo-album--image {
-    @apply transition-transform hover:-translate-y-1 active:-translate-y-1 focus:-translate-y-1;
+    @apply transition-transform hover:-translate-y-1 active:-translate-y-1 focus:-translate-y-1 hover:backdrop-blur-md;
   }
 
   @supports not selector(:focus-visible) {
