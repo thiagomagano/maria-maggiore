@@ -1,50 +1,42 @@
 ---
 import { Image } from "astro:assets";
-import plantas from "@data/plantas";
-import ape1 from "@assets/fotos/interior/interior_801_803_cob_1.webp";
-import ape2 from "@assets/fotos/interior/interior_801_803_cob_2.webp";
+import Gallery from "./jsx/Gallery";
+
+import apartamentos from "@data/apartamentos";
 ---
 
-<div class="px-32">
+<div class="">
   <div id="plantas-swiper" class="swiper main-swiper">
     <div class="swiper-wrapper">
       {
-        plantas.map((planta) => (
+        apartamentos.map((apartamento) => (
           <div class="swiper-slide">
-            <div class="grid grid-cols-1 lg:grid-cols-2">
-              <div class="grid gap-8">
-                <div class="space-y-8 h-[33svh] flex justify-center flex-col items-center ml-20">
-                  <h3 class="text-maggiore-green font-medium text-3xl max-w-xs border-t-2 pt-6 border-maggiore-green self-baseline">
-                    Apartamentos <br /> Tipo 3 dormitórios
+            <div class="grid grid-cols-1">
+              <div class="grid grid-cols-1 gap-y-12">
+                <div class=" flex  justify-between items-center justify-self-start w-full border-t-2 pt-8 border-maggiore-green">
+                  <p class="font-bold self-baseline">{apartamento.metragem}</p>
+                  <h3 class="text-maggiore-green font-medium text-3xl max-w-xs  self-baseline text-nowrap">
+                    {apartamento.titulo}
                   </h3>
-                  <p class="text-xs self-baseline">(Finais 01 e 03)</p>
-                  <p class="font-bold self-baseline">95,28m² privativos</p>
+                  <p class="text-xs self-baseline text-nowrap">
+                    {apartamento.descricao}
+                  </p>
                 </div>
-                <Image
-                  src={planta}
-                  alt={"planta maria maggiore"}
-                  class="planta-image"
-                />
-              </div>
-              <div class="grid gap-8">
-                <Image
-                  src={ape1}
-                  alt={"ape 1 maria maggiore"}
-                  class="planta-image p-10"
-                />
-                <Image
-                  src={ape2}
-                  alt={"ape 2 maria maggiore"}
-                  class="planta-image p-10"
-                />
+                <div class="px-14">
+                  <Gallery
+                    client:load
+                    photos={[apartamento.plantaImg, ...apartamento.images]}
+                    columns={apartamento.colums}
+                  />
+                </div>
               </div>
             </div>
           </div>
         ))
       }
     </div>
-    <div class="swiper-button-next invisible sm:visible"></div>
-    <div class="swiper-button-prev invisible sm:visible"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev -mr-10"></div>
   </div>
 </div>
 
@@ -73,6 +65,6 @@ import ape2 from "@assets/fotos/interior/interior_801_803_cob_2.webp";
   }
 
   .planta-image {
-    @apply h-[33svh] object-fill w-full overflow-hidden;
+    @apply w-full h-full overflow-hidden;
   }
 </style>

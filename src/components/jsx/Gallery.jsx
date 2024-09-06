@@ -11,9 +11,7 @@ import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-import photos from "@data/fotos";
-
-export default function Gallery() {
+export default function Gallery({ photos, columns }) {
   const [index, setIndex] = useState(-1);
 
   return (
@@ -24,8 +22,7 @@ export default function Gallery() {
         columns={(containerWidth) => {
           if (containerWidth < 400) return 1;
           if (containerWidth < 600) return 2;
-          if (containerWidth < 1000) return 3;
-          return 4;
+          return columns;
         }}
       />
 

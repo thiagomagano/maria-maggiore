@@ -1,5 +1,6 @@
 ---
 import Gallery from "@components/jsx/Gallery";
+import photos from "@data/fotos";
 ---
 
 <section class="py-24" id="galeria">
@@ -22,7 +23,7 @@ import Gallery from "@components/jsx/Gallery";
       </svg>
     </div>
 
-    <Gallery client:load />
+    <Gallery client:load photos={photos} columns={4} />
   </div>
 </section>
 
