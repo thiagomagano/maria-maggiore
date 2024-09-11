@@ -1,10 +1,8 @@
-import gardens20x from "@assets/fotos/planta/Slide 12 - PB GARDENS 201 202 E 203.jpg";
-import coberturas80x_1 from "@assets/fotos/planta/Slide 15 - PB COBERTURAS 801 E 803 (1PAV).jpg";
-import coberturas80x_2 from "@assets/fotos/planta/Slide 15 - PB COBERTURAS 801 E 803 (2PAV).jpg";
-import tipo3dorm from "@assets/fotos/planta/Slide 13 - PB TIPO 3 dorm.jpg";
-import tipo2dorm from "@assets/fotos/planta/Slide 14 - PB TIPO 2dorm.jpg";
-import implantacaoSS from "@assets/fotos/planta/Slide 18 - implantacao SS.jpg";
-import implantacaoT from "@assets/fotos/planta/Slide 19 - implantacao T.jpg";
+import gardens20x from "@assets/fotos/plantas/planta_gardens.webp";
+import coberturas80x_1 from "@assets/fotos/plantas/planta_cob_pav_1.webp";
+import coberturas80x_2 from "@assets/fotos/plantas/planta_cob_pav_2.webp";
+import tipo3dorm from "@assets/fotos/plantas/planta_tipo_3_dorm.webp";
+import tipo2dorm from "@assets/fotos/plantas/planta_tipo_2_dorm.webp";
 
 import foto3Dorm1 from "@assets/fotos/interior/interior_tipo_3dorm.webp";
 import foto3Dorm2 from "@assets/fotos/interior/interior_tipo_3_dorm2.webp";

@@ -1,4 +1,4 @@
-import gardens20x from "@assets/fotos/planta/Slide 12 - PB GARDENS 201 202 E 203.jpg";
+import gardens20x from "@assets/fotos/plantas/planta_gardens.webp";
 import coberturas80x_1 from "@assets/fotos/planta/Slide 15 - PB COBERTURAS 801 E 803 (1PAV).jpg";
 import coberturas80x_2 from "@assets/fotos/planta/Slide 15 - PB COBERTURAS 801 E 803 (2PAV).jpg";
 import tipo3dorm from "@assets/fotos/planta/Slide 13 - PB TIPO 3 dorm.jpg";
