@@ -24,7 +24,7 @@ import apartamentos from "@data/apartamentos";
                   />
                 
                 
-                <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-y-6 py-6 ">
+                <div class="grid grid-cols-1 row-start-1 md:row-start-2 md:grid-cols-2  xl:grid-cols-3 gap-y-6 py-6 ">
                   
                   <h3 class="text-maggiore-green font-bold text-4xl  max-w-xs inline-block border-t-2 border-maggiore-green pt-6">
                     {apartamento.titulo}
@@ -76,8 +76,9 @@ import apartamentos from "@data/apartamentos";
       },
       autoHeight: true,
       breakpoints: {
-        600: {
+        500: {
           autoHeight: false,
+          slidesPerView: 1,
         }
       }
     });
