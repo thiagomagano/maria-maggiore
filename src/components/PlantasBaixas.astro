@@ -5,66 +5,120 @@ import Gallery from "./jsx/Gallery";
 import apartamentos from "@data/apartamentos";
 ---
 
-<div class="">
+
+<div class="plantas-container relative">
   <div id="plantas-swiper" class="swiper main-swiper">
     <div class="swiper-wrapper">
       {
         apartamentos.map((apartamento) => (
           <div class="swiper-slide">
-            <div class="grid grid-cols-1">
-              <div class="grid grid-cols-1 gap-y-12">
-                <div class=" flex  justify-center gap-24 items-center  w-full">
-                  <h3 class="text-maggiore-green font-medium text-3xl border-t-2 border-maggiore-green pt-4">
-                    {apartamento.titulo}
-                  </h3>
-                  <div class="pt-4">
-                    <p class="text-xs ">{apartamento.descricao}</p>
-                    <p class="font-bold">{apartamento.metragem}</p>
-                  </div>
-                </div>
-                <div class="px-14 pb-8 min-h-[650px] flex justify-center items-center">
-                  <Gallery
+            <div class="grid grid-cols-1 gap-y-12">
+              
+                
+                
+                <Gallery
                     client:load
                     photos={[apartamento.plantaImg, ...apartamento.images]}
                     columns={apartamento.colums}
+                    type="columns"
                   />
+                
+                
+                <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 gap-y-6 py-6 ">
+                  
+                  <h3 class="text-maggiore-green font-bold text-4xl  max-w-xs inline-block border-t-2 border-maggiore-green pt-6">
+                    {apartamento.titulo}
+                  </h3>
+                  
+                  <div class="self-end text-xl max-w-xs">
+                    <p class="font-bold">{apartamento.metragem}</p>
+                  </div>
+
+                  <div class="self-end max-w-xs">
+                    <p class="text-xs">{apartamento.descricao}</p>
+                  </div>
+                 
+                  
                 </div>
-              </div>
+               
+                
+              
             </div>
           </div>
         ))
       }
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
+  <div class="swiper-button-next hidden md:block"></div>
+  <div class="swiper-button-prev hidden md:block"></div>
 </div>
 
 <script>
   import Swiper from "swiper";
-  import { Navigation } from "swiper/modules";
+  import { Navigation, Pagination } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/navigation";
 
   document.addEventListener("DOMContentLoaded", () => {
     let mainSwiper = new Swiper("#plantas-swiper", {
-      modules: [Navigation],
+      modules: [Navigation, Pagination],
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+        hiddenClass: "swiper-button-hidden",
       },
       loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+
+      },
+      autoHeight: true,
+      breakpoints: {
+        600: {
+          autoHeight: false,
+        }
+      }
     });
   });
 </script>
 
 <style>
-  .swiper {
-    /* --swiper-navigation-color: #aea181; */
+  .plantas-container {
+    position: relative;
+    padding: 0 0; /* Ajuste conforme necessário para dar espaço às setas */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     --swiper-navigation-color: #2b443b;
   }
 
-  .planta-image {
-    @apply w-full h-full overflow-hidden;
+  .swiper-button-next {
+    right: -4rem;
+    display: none;
+  }
+
+  .swiper-button-prev {
+    left: -4rem;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: block;
+    }
+  }
+
+  .swiper-pagination {
+    --swiper-pagination-color: #2b443b;
+     
+    position: relative;
+    top: -16px;
   }
 </style>
