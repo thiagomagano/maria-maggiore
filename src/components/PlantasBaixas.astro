@@ -12,29 +12,30 @@ import apartamentos from "@data/apartamentos";
       {
         apartamentos.map((apartamento) => (
           <div class="swiper-slide">
-            <div class="grid grid-cols-1 gap-y-12">
+            <div class="grid grid-cols-1">
               
-                
-                
-                <Gallery
+                <div class="px-4 md:px-24 py-6">
+
+                  <Gallery
                     client:load
                     photos={[apartamento.plantaImg, ...apartamento.images]}
                     columns={apartamento.colums}
                     type="columns"
                   />
+                </div>
                 
                 
-                <div class="grid grid-cols-1 row-start-1 md:row-start-2 md:grid-cols-2  xl:grid-cols-3 gap-y-6 py-6 ">
+                <div class="grid grid-cols-1 row-start-1 md:row-start-2 md:grid-cols-2  xl:grid-cols-3 gap-y-4 lg:px-24 px-0 pb-2">
                   
-                  <h3 class="text-maggiore-green font-bold text-4xl  max-w-xs inline-block border-t-2 border-maggiore-green pt-6">
+                  <h3 class="text-maggiore-green font-semibold text-3xl  max-w-xs inline-block " class:list={[apartamento.titulo === "Top Gardens " ? "max-w-[30px]" : ""]}>
                     {apartamento.titulo}
                   </h3>
                   
-                  <div class="self-end text-xl max-w-xs">
-                    <p class="font-bold">{apartamento.metragem}</p>
+                  <div class="self-center text-xl max-w-xs">
+                    <p class="font-semibold">{apartamento.metragem}</p>
                   </div>
 
-                  <div class="self-end max-w-xs">
+                  <div class="self-center max-w-xs">
                     <p class="text-xs">{apartamento.descricao}</p>
                   </div>
                  
@@ -78,7 +79,7 @@ import apartamentos from "@data/apartamentos";
       breakpoints: {
         500: {
           autoHeight: false,
-          slidesPerView: 1,
+       
         }
       }
     });
@@ -100,12 +101,12 @@ import apartamentos from "@data/apartamentos";
   }
 
   .swiper-button-next {
-    right: -4rem;
+  
     display: none;
   }
 
   .swiper-button-prev {
-    left: -4rem;
+    
     display: none;
   }
 
