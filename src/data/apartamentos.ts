@@ -67,7 +67,7 @@ const apartamentos: apartamentos[] = [
     metragem: "66,94 m² privativos",
     plantaImg: plantaTipo2Dorm,
     images: [interiorTipo2Dorm],
-    colums: 3,
+    colums: 2,
   },
 
   

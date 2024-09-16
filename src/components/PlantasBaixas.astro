@@ -7,7 +7,8 @@ import apartamentos from "@data/apartamentos";
 
 
 <div class="plantas-container relative">
-  <div id="plantas-swiper" class="swiper main-swiper">
+  <div id="plantas-swiper" class="swiper main-swiper relative">
+    <div class="swiper-pagination"></div>
     <div class="swiper-wrapper">
       {
         apartamentos.map((apartamento) => (
@@ -27,7 +28,7 @@ import apartamentos from "@data/apartamentos";
                 
                 <div class="grid grid-cols-1 row-start-1 md:row-start-2 md:grid-cols-2  xl:grid-cols-3 gap-y-4 lg:px-24 px-0 pb-2">
                   
-                  <h3 class="text-maggiore-green font-semibold text-3xl  max-w-xs inline-block " class:list={[apartamento.titulo === "Top Gardens " ? "max-w-[30px]" : ""]}>
+                  <h3 class="text-maggiore-green font-semibold text-3xl  max-w-xs inline-block" class:list={[apartamento.titulo === "Top Gardens " ? "max-w-[30px]" : ""]}>
                     {apartamento.titulo}
                   </h3>
                   
@@ -49,7 +50,7 @@ import apartamentos from "@data/apartamentos";
         ))
       }
     </div>
-    <div class="swiper-pagination"></div>
+    <!-- <div class="swiper-pagination"></div> -->
   </div>
   <div class="swiper-button-next hidden md:block"></div>
   <div class="swiper-button-prev hidden md:block"></div>
@@ -57,13 +58,13 @@ import apartamentos from "@data/apartamentos";
 
 <script>
   import Swiper from "swiper";
-  import { Navigation, Pagination } from "swiper/modules";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/navigation";
 
   document.addEventListener("DOMContentLoaded", () => {
     let mainSwiper = new Swiper("#plantas-swiper", {
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Autoplay],
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -79,9 +80,14 @@ import apartamentos from "@data/apartamentos";
       breakpoints: {
         500: {
           autoHeight: false,
+          height: 600
        
         }
-      }
+      },
+      autoplay: {
+        delay: 5500,
+        disableOnInteraction: false,
+      },
     });
   });
 </script>
@@ -115,12 +121,19 @@ import apartamentos from "@data/apartamentos";
     .swiper-button-prev {
       display: block;
     }
+    .swiper-pagination {
+      position: relative;
+      top: 0;
+  }
+
   }
 
   .swiper-pagination {
     --swiper-pagination-color: #2b443b;
      
     position: relative;
-    top: -16px;
+    /* top: -16px; */
+
+
   }
 </style>
