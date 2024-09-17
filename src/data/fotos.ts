@@ -7,6 +7,8 @@ import bicicletario1 from "@assets/fotos/area_comum/bicicletario_1.webp";
 import bicicletario2 from "@assets/fotos/area_comum/bicicletario_2.webp";
 import salaoDeFestas1 from "@assets/fotos/area_comum/salao_de_festas.webp";
 import salaoDeFestas2 from "@assets/fotos/area_comum/salao_de_festas_2.webp";
+import rooftop1 from "@assets/fotos/area_comum/rooftop_1.webp";
+import rooftop2 from "@assets/fotos/area_comum/rooftop_2.webp";
 
 const fotos2 = [
   fachada1,
@@ -16,6 +18,8 @@ const fotos2 = [
   hall3,
   salaoDeFestas1,
   salaoDeFestas2,
+  rooftop1,
+  rooftop2,
   bicicletario1,
   bicicletario2,
 ];

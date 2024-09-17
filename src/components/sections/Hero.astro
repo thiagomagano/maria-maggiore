@@ -1,16 +1,16 @@
 ---
 // TODO -> ESCOLHER TRÊS FOTOS
 import heroImage from "@assets/fotos/fachada_red_mm.jpg";
-import heroImage2 from "@assets/fotos/area_comum/salao_de_festas_2.webp";
-import heroImage3 from "@assets/fotos/interior/interior_801_803_cob_5.webp";
-import heroImage4 from "@assets/fotos/interior/interior_801_803_cob_4.webp";
-import Modal from "../Modal.astro";
+import heroImage2 from "@assets/fotos/area_comum/rooftop_1.webp";
+import heroImage3 from "@assets/fotos/area_comum/rooftop_2.webp";
+import heroImage4 from "@assets/fotos/area_comum/salao_de_festas_2.webp";
+
 import BotaoCTA from "../BotaoCTA.astro";
 
 import zap from "@assets/svg/zap.svg";
 import pdf from "@assets/svg/icon-pdf.svg";
 
-const heroImages = [heroImage, heroImage2, heroImage3, heroImage4];
+const heroImages = [heroImage, heroImage2, heroImage3];
 
 const TELEFONE = "5551992219166";
 const WPP_MSG =
@@ -33,7 +33,7 @@ const URL_MATERIAL =
           <div class="swiper-slide">
             <img
               src={heroImage.src}
-              class="h-full object-cover w-full overflow-hidden"
+              class="w-full h-full bg-center bg-left-center object-cover md:object-cover md:object-cover "
             />
           </div>
         ))
@@ -120,7 +120,7 @@ const URL_MATERIAL =
     border: 2px solid white;
   }
   .swiper-slide {
-    @apply h-[50svh] lg:h-[92svh] w-full object-cover overflow-hidden;
+    @apply h-auto min-h-[40svh] w-full lg:h-[70svh];
   }
 </style>
 
@@ -139,5 +139,6 @@ const URL_MATERIAL =
     },
     autoplay: true,
     loop: true,
+    height: 700,
   });
 </script>
