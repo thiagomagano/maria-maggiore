@@ -18,7 +18,7 @@ const listaCaracteristicas = [
 
 const unidadesDisponiveis = 21;
 const dataEntrega = "Dezembro de 2025";
-const andamentoGeral = 40;
+const andamentoGeral = 65;
 ---
 
 <section id="sobre" class="py-24 space-y-24 overflow-hidden">
@@ -29,7 +29,7 @@ const andamentoGeral = 40;
       class={"h-full object-contain xl:max-w-screen-sm"}
     />
     <ol
-      class="text-white text-base md:text-lg custom-counter list-none flex flex-col space-y-4 px-8 md:justify-between lg:px-0 lg:-ml-[4em]">
+      class="text-white text-base md:text-lg custom-counter list-none flex flex-col space-y-4 px-8 md:justify-between lg:px-0 ">
       {listaCaracteristicas.map((caracteristica) => <li>{caracteristica}</li>)}
     </ol>
   </div>
@@ -64,7 +64,7 @@ const andamentoGeral = 40;
 
   .custom-counter li {
     position: relative;
-    padding-left: 4em; /* Ajuste conforme necessário */
+    padding-left: 3em; /* Ajuste conforme necessário */
   }
 
   .custom-counter li::before {
