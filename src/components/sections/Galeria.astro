@@ -5,8 +5,8 @@ import photos from "@data/fotos";
 
 <section class="py-24" id="galeria">
   <div
-    class="mx-auto container flex flex-col gap-20 px-8 place-self-start text-white">
-    <div class="flex justify-between items-center flex-wrap gap-y-12">
+    class="mx-auto container flex flex-col gap-20 px-8 place-self-start text-white slide-in">
+    <div class="flex justify-between items-center flex-wrap gap-y-12 slide-in ">
       <h1
         class="justify-self-start text-4xl font-bold place-self-start max-w-3xl">
         Encante-se. Explore. <br /> Para o seu estilo de vida.
@@ -22,8 +22,10 @@ import photos from "@data/fotos";
           fill="#AEA181"></path>
       </svg>
     </div>
+<div class="slide-in">
 
-    <Gallery client:load photos={photos} columns={4} />
+  <Gallery client:load photos={photos} columns={4} />
+</div>
   </div>
 </section>
 

@@ -44,12 +44,12 @@ const pontosEstrategicos = [
 <section id="localização" class="">
   <div class="grid lg:grid-cols-2">
     <div class="bg-gray-300 py-16 lg:px-16 space-y-12">
-      <h2 class="text-4xl font-bold text-maggiore-verde-950 px-8 lg:px-0">
+      <h2 class="text-4xl font-bold text-maggiore-verde-950 px-8 lg:px-0 bounce-in">
         Praticidade no dia a dia. <br /> Comodidade garantida.
       </h2>
 
       <a
-        class="grid place-items-center place-content-center"
+        class="grid place-items-center place-content-center bounce-in"
         href="https://maps.app.goo.gl/as4w8QJssQMsvpuNA"
         target="_blank">
         <Image
@@ -61,12 +61,12 @@ const pontosEstrategicos = [
     </div>
     <div class="bg-maggiore-green lg:px-24">
       <div class="text-white py-16 px-8 lg:py-28 space-y-10">
-        <h4 class="text-2xl text-white">Praticidade a 5 minutos de casa.</h4>
+        <h4 class="text-2xl text-white bounce-in">Praticidade a 5 minutos de casa.</h4>
 
-        <ol class="grid sm:grid-cols-2 gap-4 sm:h-[600px] sm:pt-16">
+        <ol class="grid sm:grid-cols-2 gap-4 sm:h-[600px] sm:pt-16 slide-in">
           {
             pontosEstrategicos.map((pontos) => (
-              <li class="flex gap-4 items-center text-xl">
+              <li class="flex gap-4 items-center text-xl bounce-in">
                 <span class="text-4xl font-medium  rounded-full border-maggiore-dourado-400 border-2 min-w-[75px] min-h-[75px] grid place-items-center ">
                   {pontos.id}
                 </span>

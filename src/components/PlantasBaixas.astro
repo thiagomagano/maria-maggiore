@@ -58,13 +58,13 @@ import apartamentos from "@data/apartamentos";
 
 <script>
   import Swiper from "swiper";
-  import { Navigation, Pagination, Autoplay } from "swiper/modules";
+  import { Navigation, Pagination} from "swiper/modules";
   import "swiper/css";
   import "swiper/css/navigation";
 
   document.addEventListener("DOMContentLoaded", () => {
     let mainSwiper = new Swiper("#plantas-swiper", {
-      modules: [Navigation, Pagination, Autoplay],
+      modules: [Navigation, Pagination],
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -84,10 +84,7 @@ import apartamentos from "@data/apartamentos";
        
         }
       },
-      autoplay: {
-        delay: 5500,
-        disableOnInteraction: false,
-      },
+   
     });
   });
 </script>
