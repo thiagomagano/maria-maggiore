@@ -55,7 +55,7 @@ const apartamentos: apartamentos[] = [
 
   {
     titulo: "Apartamentos Tipo 3 dormitórios",
-    descricao: "(Finais 01 e 02)",
+    descricao: "(Finais 01 e 03)",
     metragem: "95,28 m² privativos",
     plantaImg: plantaTipo3Dorm,
     images: [interiorTipo3Dorm1, interiorTipo3Dorm2],
