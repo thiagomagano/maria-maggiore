@@ -1,5 +1,5 @@
 import plantaGardens from "@assets/fotos/plantas/planta_gardens.webp";
-import plantaCoberturasPiso1 from "@assets/fotos/plantas/planta_cob_pav_1.webp";
+import plantaCoberturasPiso1 from "@assets/fotos/plantas/planta_cob_pav_1_B.webp";
 import plantaCoberturasPiso2 from "@assets/fotos/plantas/planta_cob_pav_2.webp";
 import plantaTipo3Dorm from "@assets/fotos/plantas/planta_tipo_3_dorm.webp";
 import plantaTipo2Dorm from "@assets/fotos/plantas/planta_tipo_2_dorm.webp";
@@ -43,7 +43,7 @@ const apartamentos: apartamentos[] = [
     ],
     colums: 4,
   },
-  
+
   {
     titulo: "Top Gardens ",
     descricao: "Gardens Elevados (201, 202 e 203)",
@@ -69,8 +69,6 @@ const apartamentos: apartamentos[] = [
     images: [interiorTipo2Dorm],
     colums: 2,
   },
-
-  
 ];
 
 export default apartamentos;
