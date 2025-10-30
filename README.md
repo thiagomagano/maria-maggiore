@@ -1,54 +1,32 @@
-# Astro Starter Kit: Basics
+## Maria-Maggiore — Landing Page
 
-```sh
-npm create astro@latest -- --template basics
-```
+Landing page de um novo empreendimento da incorporadora Gazzola Inc., chamada Maria-Maggiore. O objetivo é apresentar o empreendimento, destacar diferenciais, exibir informações essenciais (localização, plantas, amenities) e captar leads por meio de formulários de interesse.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+https://mariamaggiore.gazzolainc.com.br
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Tecnologias
+- **Astro 4**: arquitetura de ilhas com suporte a SSR/SSG
+- **React 18**: componentes interativos (galerias e lightbox)
+- **Tailwind CSS 3**: tema customizado (cores de marca e tipografia Inter)
+- **Swiper**: carrosséis (hero e seção de plantas)
+- **react-photo-album** + **yet-another-react-lightbox**: galeria responsiva com fullscreen e zoom
+- **TypeScript**: tipagem e melhor DX
+- **Netlify (adapter)**: `@astrojs/netlify` com `output: "server"`
+- **Imagens otimizadas**: assets `.webp` e `sharp`
+- **SEO/SMO**: metatags Open Graph/Twitter no `Layout`
+- **Dev/Build**: pnpm + scripts `astro dev/build/preview`, Prettier + plugin Astro
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Features
+- **Hero** com carrossel e CTAs:
+  - Baixar material completo (PDF)
+  - Fale conosco (WhatsApp)
+- **Seções**: Hero, Sobre, Diferenciais, Galeria, Plantas, Localização, CTA, Footer
+- **Galeria de fotos** responsiva com lightbox (fullscreen/zoom)
+- **Plantas**: carrossel por tipologia com galeria de plantas/fotos
+- **Contato**: link direto para plantão no WhatsApp, telefone e links da Gazzola Inc.
+- **Botão flutuante do WhatsApp** (desktop/mobile)
+- **Progresso da obra**: barra de progresso estilizada
+- **Navegação fixa** com rolagem suave
+- **Responsivo mobile-first** e foco em performance
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
