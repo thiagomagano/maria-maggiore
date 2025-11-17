@@ -17,17 +17,16 @@ const { descricao, progresso } = Astro.props;
 
 <style>
   .progress-bar {
-    width: 100%; /* Ou defina uma largura fixa */
-    height: 100%; /* Ajuste a altura conforme necessário */
+    width: 100%; 
     min-height: 1.125rem;
     background: linear-gradient(
       to right,
       #aea181 var(--progress),
       transparent var(--progress)
-    ); /* Cor de fundo da barra vazia */
-    border-radius: 5px; /* Opcional: cantos arredondados */
+    );
+    border-radius: 5px;
     overflow: hidden;
-    border: solid 1px #aea181; /* Garante que o preenchimento não vaze */
+    border: solid 1px #aea181;
   }
   span {
     @apply text-xl font-bold py-2 border border-maggiore-dourado-400 self-stretch text-center block w-full;
